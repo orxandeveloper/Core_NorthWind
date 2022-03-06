@@ -52,7 +52,7 @@ namespace Core_NorthWind
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Products}/{action=ProductsRegister}/{id?}");
+                    pattern: "{controller=Products}/{action=Create}/{id?}");
             });
         }
     }

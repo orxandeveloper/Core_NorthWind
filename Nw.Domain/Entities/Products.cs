@@ -16,6 +16,8 @@ namespace Northwind.Core.Domain.Entities
         public string ProductName { get; set; }
         public int? SupplierId { get; set; }
         public int? CategoryId { get; set; }
+        [Required (AllowEmptyStrings =false,ErrorMessage = "QuantityPerUnit is not be null or empty")]
+        [StringLength(maximumLength:5,ErrorMessage = "Max {0}, min {1} characters",MinimumLength =2)]
         public string QuantityPerUnit { get; set; }
         public decimal? UnitPrice { get; set; }
         public short? UnitsInStock { get; set; }

@@ -13,8 +13,8 @@
     <thead>
         <tr>
             <th>
-              @* orxan  @Html.DisplayNameFor(model => model.ProductName)*@
-              <label asp-for="model.ProductName"></label>
+                @Html.DisplayNameFor(model => model.ProductName)
+             
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.QuantityPerUnit)
@@ -49,8 +49,12 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
+            <td >
+                <a asp-controller="Products" asp-action="Edit" asp-route-id="@item.ProductId"> @item.ProductName</a>
+             @*   <a href="/Products/Edit">
+                     @Html.DisplayFor(modelItem => item.ProductName)
+                </a>
+               *@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.QuantityPerUnit)
@@ -80,8 +84,7 @@
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+               
                 <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
             </td>
         </tr>
